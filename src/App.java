@@ -2,16 +2,18 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
         
-        Point point1 = new Point(3,2);
-        Point point2 = new Point(3,2);
+        Task task = new Task(TaskType.PRIVATE, "buy milk");
+        TaskType type = task.getType();
+        System.out.println(TaskType.PRIVATE.equals(type));
 
-        System.out.println(point1);
-        System.out.println(point2);
-
-        System.out.println(point1.hashCode());
-        System.out.println(point2.hashCode());
-
-        System.out.println(point1.equals(point2));
+        switch(type){
+            case PRIVATE:
+            System.out.println("Task[type = " + type + "]");
+            break;
+            case WORK:
+            System.out.println("Task[type = " + type + "]");
+        }
         
     }
+    
 }
